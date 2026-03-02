@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Mission Control Project Board
+    url: https://github.com/users/basementbrain10-bot/projects/1
+    about: View and manage the Kanban board

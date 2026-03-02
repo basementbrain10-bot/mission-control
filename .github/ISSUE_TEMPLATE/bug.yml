@@ -1,0 +1,24 @@
+name: Bug
+description: Something broken
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: repro
+    attributes:
+      label: Repro steps
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      placeholder: macOS version, OpenClaw version, etc.
