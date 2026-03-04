@@ -14,3 +14,6 @@ This repo is the **intake + operating system** for agent-driven execution across
 ## Conventions
 - Prefix issue titles with: `[TASK]`, `[BUG]`, `[RESEARCH]`
 - Keep acceptance criteria explicit.
+## Operations
+
+- [Agent Operating Rhythm](docs/operating-rhythm.md)
