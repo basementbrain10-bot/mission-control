@@ -1,0 +1,15 @@
+// Verification email template
+var subject = "Verify your email address";
+var from = "noreply@company.com";
+to: ["{{user.email}}"]
+body: |
+  Hi {{user.name}}!,
+  
+  Thank you for signing up! Please click the link below to verify your email address:
+  
+  [[VERIFY_LINK]]
+  
+  This link will expire in 24 hours.
+
+  Cheers,
+  The Team

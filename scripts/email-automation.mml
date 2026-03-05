@@ -1,0 +1,20 @@
+// Email Automation Workflow
+// This MML template demonstrates email sending workflows
+
+var subject = "Task Complete: {{task_name}}";
+var from = "${SMTP_FROM:-noreply@company.com}";
+to: [
+    "${HIMALAYA_TEST_TO:-you@example.com}",
+    "${{recipient_list:[].email}}" if recipient_list exists
+]
+body: |
+  Subject: {{subject}}
+  
+  Task: {{task_name}}
+  Status: ${{status:"completed"}}
+  Completed At: now()
+  
+  Details:
+  - Result: {{result_summary}}
+  - Output files: {{output_files}}
+
