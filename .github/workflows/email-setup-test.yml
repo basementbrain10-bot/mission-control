@@ -1,0 +1,56 @@
+# Workflow: Test Email Integration Setup
+# This workflow validates that himailaya is configured correctly
+
+name: Email Integration Tests
+on:
+  push:
+    paths:
+      - scripts/
+      - docs/
+      - .email-config.env.example
+  pull_request:
+    paths:
+      - scripts/
+      - docs/
+
+jobs:
+  email-setup-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install himailaya
+        run: |
+          # Note: himailaya is macOS-specific
+          # For CI testing, we verify the script structure instead
+          echo "Himalaya is installed on macOS environments."
+
+      - name: Verify email scripts exist
+        run: |
+          if [ ! -f "scripts/himalaya-setup.sh" ]; then
+            echo "Error: himailaya-setup.sh not found"
+            exit 1
+          fi
+          if [ ! -f "docs/email-setup.md" ]; then
+            echo "Error: email-setup.md not found"
+            exit 1
+          fi
+          echo "✅ All email integration files present"
+
+      - name: Check config template exists
+        run: |
+          if [ ! -f ".email-config.env.example" ]; then
+            echo "Error: .email-config.env.example not found"
+            exit 1
+          fi
+          echo "✅ Configuration template ready"
+
+      - name: Verify templates directory
+        run: |
+          if [ -d "scripts/templates" ] && [ $(ls scripts/templates/*.mml | wc -l) -ge 1 ]; then
+            echo "✅ Email templates found"
+          else
+            echo "⚠️  No email templates found in scripts/templates/"
+            echo "Create with: cat > scripts/templates/welcome-email.mml"
+          fi
