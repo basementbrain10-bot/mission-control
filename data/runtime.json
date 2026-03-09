@@ -1,0 +1,108 @@
+{
+  "updatedAt": "2026-03-06T13:26:00-05:00",
+  "cronJobs": [
+    {
+      "id": "074e7ee5-b3f6-4911-8bb0-8cdfb65adc56",
+      "name": "mission-control-runtime-sync",
+      "enabled": true,
+      "schedule": "every 15m",
+      "nextRunAtMs": 270000,
+      "lastRunAtMs": 1800000,
+      "lastRunStatus": "running",
+      "sessionTarget": "isolated",
+      "model": "Local35"
+    },
+    {
+      "id": "f19fce6e-542a-4862-b7e8-5f934fe7a1c1",
+      "name": "mission-control-taskbuilder",
+      "enabled": true,
+      "schedule": "every 30m",
+      "nextRunAtMs": 300000,
+      "lastRunAtMs": 18000000,
+      "lastRunStatus": "ok",
+      "sessionTarget": "isolated",
+      "model": "Local35"
+    },
+    {
+      "id": "07a85907-6d34-4a2a-bda1-9f0f70486916",
+      "name": "Mission control triage",
+      "enabled": true,
+      "schedule": "cron 0 * * * * (stagger 5m)",
+      "nextRunAtMs": 1920000,
+      "lastRunAtMs": 1620000,
+      "lastRunStatus": "ok",
+      "sessionTarget": "isolated",
+      "model": "Local35"
+    },
+    {
+      "id": "4eb8763f-4cb2-4ce6-8dad-e2ef364f91b9",
+      "name": "house-manager-researcher",
+      "enabled": true,
+      "schedule": "every 2h",
+      "nextRunAtMs": 7200000,
+      "lastRunAtMs": null,
+      "lastRunStatus": "idle",
+      "sessionTarget": "isolated",
+      "model": "NIM70B"
+    },
+    {
+      "id": "a992778c-d88b-4f76-8123-8746f20cc2c6",
+      "name": "house-manager-lead-engineer",
+      "enabled": true,
+      "schedule": "every 3h",
+      "nextRunAtMs": 10800000,
+      "lastRunAtMs": null,
+      "lastRunStatus": "idle",
+      "sessionTarget": "isolated",
+      "model": "NIM70B"
+    },
+    {
+      "id": "f6216321-7b61-44fd-bbf5-d1de89ae6de4",
+      "name": "house-manager-qa",
+      "enabled": true,
+      "schedule": "every 4h",
+      "nextRunAtMs": 14400000,
+      "lastRunAtMs": null,
+      "lastRunStatus": "idle",
+      "sessionTarget": "isolated",
+      "model": "NIMReason"
+    },
+    {
+      "id": "f763f4b1-1f92-4c52-a2f5-6932dc975a29",
+      "name": "house-manager-weather-sync",
+      "enabled": true,
+      "schedule": "cron 0 7 * * * @ America/New_York",
+      "nextRunAtMs": 64800000,
+      "lastRunAtMs": null,
+      "lastRunStatus": "idle",
+      "sessionTarget": "isolated",
+      "model": "main"
+    },
+    {
+      "id": "e6f999c9-5f9b-4275-b6aa-8d0d0c3c9c7f",
+      "name": "house-manager-bills-sync",
+      "enabled": true,
+      "schedule": "cron 30 8 * * * @ America/New_York",
+      "nextRunAtMs": 64200000,
+      "lastRunAtMs": null,
+      "lastRunStatus": "idle",
+      "sessionTarget": "isolated",
+      "model": "main"
+    }
+  ],
+  "sessions": [
+    {
+      "key": "agent:main:cron:074e7ee5-b3f6-4911-8bb0-8cdfb65adc56",
+      "displayName": "Cron: mission-control-runtime-sync",
+      "updatedAt": 1772821616251,
+      "model": "qwen3.5:9b",
+      "totalTokens": 21499,
+      "channel": "unknown"
+    }
+  ],
+  "subagents": {
+    "total": 0,
+    "active": [],
+    "recent": []
+  }
+}
